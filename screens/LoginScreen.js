@@ -13,6 +13,7 @@ function LoginScreen() {
 		setIsAuthenticating(true);
 		try {
 			const token = await login(email, password);
+			console.log(token);
 			authContext.authenticate(token);
 		} catch (err) {
 			Alert.alert('authentication failed', 'check your credentials');
