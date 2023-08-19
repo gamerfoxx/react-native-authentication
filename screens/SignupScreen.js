@@ -16,8 +16,8 @@ function SignupScreen() {
 			authContext.authenticate(token);
 		} catch (err) {
 			Alert.alert('invalid info', 'verify your fields');
+			setIsAuthenticating(false);
 		}
-		setIsAuthenticating(false);
 	}
 
 	if (isAuthenticating) {
