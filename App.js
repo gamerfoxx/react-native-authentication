@@ -10,48 +10,55 @@ import { Colors } from './constants/styles';
 const Stack = createNativeStackNavigator();
 
 function AuthStack() {
-  return (
-    <Stack.Navigator
-      screenOptions={{
-        headerStyle: { backgroundColor: Colors.primary500 },
-        headerTintColor: 'white',
-        contentStyle: { backgroundColor: Colors.primary100 },
-      }}
-    >
-      <Stack.Screen name="Login" component={LoginScreen} />
-      <Stack.Screen name="Signup" component={SignupScreen} />
-    </Stack.Navigator>
-  );
+	return (
+		<Stack.Navigator
+			screenOptions={{
+				headerStyle: { backgroundColor: Colors.primary2 },
+				headerTintColor: 'white',
+				contentStyle: { backgroundColor: Colors.primary1 },
+			}}>
+			<Stack.Screen
+				name="Login"
+				component={LoginScreen}
+			/>
+			<Stack.Screen
+				name="Signup"
+				component={SignupScreen}
+			/>
+		</Stack.Navigator>
+	);
 }
 
 function AuthenticatedStack() {
-  return (
-    <Stack.Navigator
-      screenOptions={{
-        headerStyle: { backgroundColor: Colors.primary500 },
-        headerTintColor: 'white',
-        contentStyle: { backgroundColor: Colors.primary100 },
-      }}
-    >
-      <Stack.Screen name="Welcome" component={WelcomeScreen} />
-    </Stack.Navigator>
-  );
+	return (
+		<Stack.Navigator
+			screenOptions={{
+				headerStyle: { backgroundColor: Colors.primary2 },
+				headerTintColor: 'white',
+				contentStyle: { backgroundColor: Colors.primary1 },
+			}}>
+			<Stack.Screen
+				name="Welcome"
+				component={WelcomeScreen}
+			/>
+		</Stack.Navigator>
+	);
 }
 
 function Navigation() {
-  return (
-    <NavigationContainer>
-      <AuthStack />
-    </NavigationContainer>
-  );
+	return (
+		<NavigationContainer>
+			<AuthStack />
+		</NavigationContainer>
+	);
 }
 
 export default function App() {
-  return (
-    <>
-      <StatusBar style="light" />
+	return (
+		<>
+			<StatusBar style="light" />
 
-      <Navigation />
-    </>
-  );
+			<Navigation />
+		</>
+	);
 }
